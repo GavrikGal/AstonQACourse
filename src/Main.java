@@ -21,6 +21,14 @@ public class Main {
         System.out.println("\n___Task 5____");
         System.out.println(compareNumbers(15, 6));
 
+        System.out.println("\n___Task 6____");
+        checkPositive(-1);
+
+        System.out.println("\n___Task 7____");
+        System.out.println(is_negative(0));
+
+        System.out.println("\n___Task 8____");
+        printStringNTimes("Привет", 4);
 
     }
 
@@ -72,4 +80,22 @@ public class Main {
     public static boolean compareNumbers(int a, int b) {
         return a + b >= 10 && a + b <= 20;
     }
+
+    public static void checkPositive(int n) {
+        if (n >= 0)
+            System.out.println("Передали положительное число");
+        else
+            System.out.println("Передали отрицательное число");
+    }
+
+    public static boolean is_negative(int n) {
+        return n < 0;
+    }
+
+    public static void printStringNTimes(String string, int N) {
+        for (int i=0; i<N; i++) {
+            System.out.println(string);
+        }
+    }
+
 }
