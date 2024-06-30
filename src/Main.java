@@ -25,10 +25,13 @@ public class Main {
         checkPositive(-1);
 
         System.out.println("\n___Task 7____");
-        System.out.println(is_negative(0));
+        System.out.println(isNegative(0));
 
         System.out.println("\n___Task 8____");
         printStringNTimes("Привет", 4);
+
+        System.out.println("\n___Task 9____");
+        System.out.println(isLeapYear(404));
 
     }
 
@@ -88,7 +91,7 @@ public class Main {
             System.out.println("Передали отрицательное число");
     }
 
-    public static boolean is_negative(int n) {
+    public static boolean isNegative(int n) {
         return n < 0;
     }
 
@@ -97,5 +100,16 @@ public class Main {
             System.out.println(string);
         }
     }
+
+    public static boolean isLeapYear(int year) {
+        if (year % 4 == 0) {
+            if (year % 100 != 0 || year % 400 == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
 }
