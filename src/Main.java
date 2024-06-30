@@ -18,6 +18,10 @@ public class Main {
         System.out.println("\n___Task 4____");
         compareNumbers();
 
+        System.out.println("\n___Task 5____");
+        System.out.println(compareNumbers(15, 6));
+
+
     }
 
     public static void printThreeWords() {
@@ -63,5 +67,9 @@ public class Main {
             System.out.println("a >= b");
         else
             System.out.println("a < b");
+    }
+
+    public static boolean compareNumbers(int a, int b) {
+        return a + b >= 10 && a + b <= 20;
     }
 }
