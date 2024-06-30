@@ -33,6 +33,10 @@ public class Main {
         System.out.println("\n___Task 9____");
         System.out.println(isLeapYear(404));
 
+        System.out.println("\n___Task 10___");
+        reverseMassive();
+
+
     }
 
     public static void printThreeWords() {
@@ -110,6 +114,13 @@ public class Main {
         return false;
     }
 
+    public static void reverseMassive() {
+        int[] array = new int[] {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
 
+        for (int i=0; i<array.length; i++) {
+            array[i] = (array[i] - 1) / -1;
+            System.out.print(array[i]);
+        }
+    }
 
 }
