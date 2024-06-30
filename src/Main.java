@@ -12,6 +12,9 @@ public class Main {
         System.out.println("\n___Task 2____");
         checkSumSign();
 
+        System.out.println("\n___Task 3____");
+        printColor();
+
     }
 
     public static void printThreeWords() {
@@ -35,5 +38,17 @@ public class Main {
             System.out.println("Сумма отрицательная");
     }
 
+    public static void printColor() {
+        int value = 101;
 
+        if (value <= 0) {
+            System.out.println("Красный");
+        }
+        else if (value <= 100) {
+            System.out.println("Желтый");
+        }
+        else if (value > 100) {
+            System.out.println("Зеленый");
+        }
+    }
 }
