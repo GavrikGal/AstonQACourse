@@ -15,6 +15,9 @@ public class Main {
         System.out.println("\n___Task 3____");
         printColor();
 
+        System.out.println("\n___Task 4____");
+        compareNumbers();
+
     }
 
     public static void printThreeWords() {
@@ -50,5 +53,15 @@ public class Main {
         else if (value > 100) {
             System.out.println("Зеленый");
         }
+    }
+
+    public static void compareNumbers() {
+        int a = 1;
+        int b = 2;
+
+        if (a >= b)
+            System.out.println("a >= b");
+        else
+            System.out.println("a < b");
     }
 }
