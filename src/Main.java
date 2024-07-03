@@ -36,11 +36,22 @@ public class Main {
         System.out.println("\n___Task 10___");
         reverseMassive();
 
+        System.out.println("\n___Task 11___");
+        array();
 
+        System.out.println("\n___Task 12___");
+        arraysElementsSmallerThanSix();
+
+        System.out.println("\n___Task 13___");
+        squareArray(7);
+
+        System.out.println("\n___Task 14___");
+        var array = arrayWithLengthAndInitialValue(6, 42);
+        System.out.println(Arrays.toString(array));
     }
 
     public static void printThreeWords() {
-        List<String> words = new ArrayList<String>(
+        List<String> words = new ArrayList<>(
                 Arrays.asList("Orange", "Banana", "Apple")
         );
 
@@ -115,12 +126,57 @@ public class Main {
     }
 
     public static void reverseMassive() {
-        int[] array = new int[] {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        var array = new int[] {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        System.out.println(Arrays.toString(array));
 
         for (int i=0; i<array.length; i++) {
             array[i] = (array[i] - 1) / -1;
-            System.out.print(array[i]);
         }
+
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static void array() {
+        var array = new int[100];
+        for (int i=0; i<array.length;) {
+            array[i] = ++i;
+        }
+
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static void arraysElementsSmallerThanSix() {
+        var array = new int[] {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println(Arrays.toString(array));
+
+        for (int i=0; i<array.length; i++) {
+            if (array[i] < 6) {
+                array[i] *= 2;
+            }
+        }
+
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static void squareArray(int n) {
+        var array = new int[n][n];
+
+        for (int i=0; i<array.length; i++) {
+            for (int j=0; j<array.length; j++) {
+                array[i][j] = ((i - j) == 0) || ((i + j) == (n-1)) ? 1 : 0;
+            }
+        }
+
+        for (int[] row : array) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+
+    public static int[] arrayWithLengthAndInitialValue(
+            int len, int initialValue) {
+        var array = new int[len];
+        Arrays.fill(array, initialValue);
+        return array;
     }
 
 }
