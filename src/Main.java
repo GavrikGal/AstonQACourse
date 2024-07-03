@@ -28,11 +28,15 @@ public class Main {
         System.out.println(isNegative(0));
 
         System.out.println("\n___Task 8____");
-        printStringNTimes("Привет", 4);
+        try {
+            printStringNTimes("Привет", 7);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("\n___Task 9____");
         try {
-            System.out.println(isLeapYear(0));
+            System.out.println(isLeapYear(404));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -47,11 +51,19 @@ public class Main {
         arraysElementsSmallerThanSix();
 
         System.out.println("\n___Task 13___");
-        squareArray(7);
+        try {
+            squareArray(7);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("\n___Task 14___");
-        var array = arrayWithLengthAndInitialValue(6, 42);
-        System.out.println(Arrays.toString(array));
+        try {
+            var array = arrayWithLengthAndInitialValue(6, 42);
+            System.out.println(Arrays.toString(array));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void printThreeWords() {
@@ -112,7 +124,9 @@ public class Main {
         return n < 0;
     }
 
-    public static void printStringNTimes(String string, int n) {
+    public static void printStringNTimes(String string, int n)
+            throws IllegalArgumentException {
+        validateGreaterThanZero(n);
         for (int i = 0; i < n; i++) {
             System.out.println(string);
         }
@@ -120,9 +134,7 @@ public class Main {
 
     public static boolean isLeapYear(int year)
             throws IllegalArgumentException {
-        if (year < 1) {
-            throw new IllegalArgumentException("Year must be greater than 0");
-        }
+        validateGreaterThanZero(year);
 
         if (year % 4 == 0) {
             return year % 100 != 0 || year % 400 == 0;
@@ -163,7 +175,9 @@ public class Main {
         System.out.println(Arrays.toString(array));
     }
 
-    public static void squareArray(int n) {
+    public static void squareArray(int n)
+            throws IllegalArgumentException {
+        validateGreaterThanZero(n);
         var array = new int[n][n];
 
         for (int i = 0; i < array.length; i++) {
@@ -178,10 +192,17 @@ public class Main {
     }
 
     public static int[] arrayWithLengthAndInitialValue(
-            int len, int initialValue) {
+            int len, int initialValue) throws IllegalArgumentException {
+        validateGreaterThanZero(len);
         var array = new int[len];
         Arrays.fill(array, initialValue);
         return array;
+    }
+
+    private static void validateGreaterThanZero (int n)
+            throws IllegalArgumentException{
+        if (n <= 0)
+            throw new IllegalArgumentException("Value must be greater than 0");
     }
 
 }
