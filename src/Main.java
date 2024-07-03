@@ -31,7 +31,11 @@ public class Main {
         printStringNTimes("Привет", 4);
 
         System.out.println("\n___Task 9____");
-        System.out.println(isLeapYear(404));
+        try {
+            System.out.println(isLeapYear(0));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("\n___Task 10___");
         reverseMassive();
@@ -76,11 +80,9 @@ public class Main {
 
         if (value <= 0) {
             System.out.println("Красный");
-        }
-        else if (value <= 100) {
+        } else if (value <= 100) {
             System.out.println("Желтый");
-        }
-        else if (value > 100) {
+        } else if (value > 100) {
             System.out.println("Зеленый");
         }
     }
@@ -110,26 +112,29 @@ public class Main {
         return n < 0;
     }
 
-    public static void printStringNTimes(String string, int N) {
-        for (int i=0; i<N; i++) {
+    public static void printStringNTimes(String string, int n) {
+        for (int i = 0; i < n; i++) {
             System.out.println(string);
         }
     }
 
-    public static boolean isLeapYear(int year) {
+    public static boolean isLeapYear(int year)
+            throws IllegalArgumentException {
+        if (year < 1) {
+            throw new IllegalArgumentException("Year must be greater than 0");
+        }
+
         if (year % 4 == 0) {
-            if (year % 100 != 0 || year % 400 == 0) {
-                return true;
-            }
+            return year % 100 != 0 || year % 400 == 0;
         }
         return false;
     }
 
     public static void reverseMassive() {
-        var array = new int[] {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        var array = new int[]{1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.println(Arrays.toString(array));
 
-        for (int i=0; i<array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             array[i] = (array[i] - 1) / -1;
         }
 
@@ -138,7 +143,7 @@ public class Main {
 
     public static void array() {
         var array = new int[100];
-        for (int i=0; i<array.length;) {
+        for (int i = 0; i < array.length; ) {
             array[i] = ++i;
         }
 
@@ -146,10 +151,10 @@ public class Main {
     }
 
     public static void arraysElementsSmallerThanSix() {
-        var array = new int[] {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        var array = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         System.out.println(Arrays.toString(array));
 
-        for (int i=0; i<array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] < 6) {
                 array[i] *= 2;
             }
@@ -161,9 +166,9 @@ public class Main {
     public static void squareArray(int n) {
         var array = new int[n][n];
 
-        for (int i=0; i<array.length; i++) {
-            for (int j=0; j<array.length; j++) {
-                array[i][j] = ((i - j) == 0) || ((i + j) == (n-1)) ? 1 : 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                array[i][j] = ((i - j) == 0) || ((i + j) == (n - 1)) ? 1 : 0;
             }
         }
 
