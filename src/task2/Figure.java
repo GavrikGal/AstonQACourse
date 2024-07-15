@@ -1,6 +1,7 @@
 package task2;
 
-public abstract class Figure implements PerimeterCalculable, AreaCalculable, Colorable, Named, Characterizable {
+public abstract class Figure implements PerimeterCalculable, AreaCalculable,
+        Colorable, Named, Characterizable {
     private final String name;
     protected double[] sides;
     protected String fillColor;
