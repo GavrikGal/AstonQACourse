@@ -45,7 +45,7 @@ public class Main {
         Rectangle rectangle = new Rectangle(4, 6, "синий", "зеленый");
         Triangle triangle = new Triangle(3, 4, 5, "желтый", "фиолетовый");
 
-        Characterizable[] shapes = { circle, rectangle, triangle };
+        Characterizable[] shapes = {circle, rectangle, triangle};
 
         for (Characterizable shape : shapes) {
             try {

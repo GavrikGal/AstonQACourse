@@ -1,6 +1,6 @@
 package task2;
 
-public interface AreaCalculable extends Sided{
+public interface AreaCalculable extends Sided {
 
     // Для прямоугольника реализация по умолчанию, остальные должны переопределить метод
     default double calculateArea() throws NotImplementedException {
