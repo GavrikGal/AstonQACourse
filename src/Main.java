@@ -1,12 +1,21 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("____ Task 2 ____");
+        System.out.println("____ Task 1 ____");
+        task1();
+
+        System.out.println("\n____ Task 2 ____");
         task2();
 
         System.out.println("\n____ Task 3 ____");
         task3();
 
+    }
+
+    public static void task1() {
+        var person = new Person("Test Name", "Test Position",
+                "test.email@mailbox.com", "9000000", 1, 18);
+        person.getInfo();
     }
 
     public static void task2() {
@@ -23,10 +32,8 @@ public class Main {
         persArray[4] = new Person("Sidorov Petr", "Worker",
                 "sidpetr@mailbox.com", "982312316", 30001, 21);
 
-        for (int i = 0; i < persArray.length; i++) {
-            System.out.println("---- Person " + (i + 1) + " ----");
-            persArray[i].getInfo();
-            System.out.println();
+        for (Person person : persArray) {
+            person.getInfo();
         }
     }
 

@@ -16,12 +16,19 @@ public class Person {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", position='" + position + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", salary=" + salary +
+                ", age=" + age +
+                '}';
+    }
+
     public void getInfo() {
-        System.out.println("Name: " + name);
-        System.out.println("Position: " + position);
-        System.out.println("Email: " + email);
-        System.out.println("Phone: " + phone);
-        System.out.println("Salary: " + salary);
-        System.out.println("Age: " + age);
+        System.out.println(this);
     }
 }
