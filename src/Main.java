@@ -15,10 +15,13 @@ public class Main {
     public static void task1() {
         Dog dog1 = new Dog("Бобик");
         dog1.run(150);
+        dog1.run(-1);
         dog1.swim(5);
+        dog1.swim(-1);
 
         Cat cat1 = new Cat("Мурзик");
         cat1.run(100);
+        cat1.run(-1);
         cat1.swim(5);
 
         Cat[] cats = {new Cat("Барсик"),
