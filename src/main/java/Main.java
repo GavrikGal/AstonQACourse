@@ -10,6 +10,9 @@ public class Main {
         System.out.println("---- Task 1 ----");
         task1();
 
+        System.out.println("\n---- Task 2 ----");
+        task2();
+
     }
 
     public static void task1() {
@@ -29,6 +32,17 @@ public class Main {
 
         System.out.println("Уникальные слова: " + uniqueWords);
         System.out.println("Частота встречаемости слов: " + wordCount);
+    }
+
+    public static void task2() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Иванов", "+375-29-123-45-67");
+        phoneBook.add("Петров", "+375-33-987-65-43");
+        phoneBook.add("Иванов", "+375-25-555-12-34");
+
+        System.out.println("Иванов: " + phoneBook.get("Иванов"));
+        System.out.println("Петров: " + phoneBook.get("Петров"));
+        System.out.println("Сидоров: " + phoneBook.get("Сидоров"));
     }
 
 }
